@@ -32,11 +32,10 @@ public class LotManager extends JDBCManager {
 		executeUpdate( insertTableSQL );
 	}
  
-	public static void updateLot(int lot_Id, Date created_date, Date due_date) throws SQLException{ //PUEDE LLEGAR A ESTAR MAL!!!!!
-//MIRAR EN USERMANAGERJAVA PARA TRATAR DE ENTENDER Q ONDA ACA!!!
+	public static void updateLot(int lot_Id, Date created_date, Date due_date) throws SQLException{
 		String updateTableSQL = "UPDATE DBLOT"
-			+ " SET CREATED_DATE = '"+created_date+"' "
-			+ " WHERE LOT_ID = "+lot_Id;
+			+ " SET CREATED_DATE = '"+createdate+"' "
+			+ " WHERE LOT_ID = "+userId;
 		String updateTableSQL2 = "UPDATE DBLOT"
 			+ " SET DUE_DATE = '"+due_date+"' "
 			+ " WHERE LOT_ID = "+lot_Id;
@@ -62,14 +61,14 @@ public class LotManager extends JDBCManager {
 			//Creo el usuario a partir de los datos obtenidos de la base
 			Lot lot = new Lot();
 
-			if( register.containsKey("lot_id") ) // SETEA UN OBJETO TIPO "LOT" CON LOS ATRIBUTOS QUE SACA DE LA BASE DE DATOS
-				lot.setId( ((BigDecimal) register.get("lot_id")).intValue() );
+			if( register.containsKey("lot_id") )
+				lot.setId( ((BigDecimal) register.get("user_id")).intValue() );
 			
 			
-			if( register.containsKey("created_b") )
-				usr.setDate((String) register.get("created_by") );
+			if( register.containsKey("created_by") )
+				usr.setCreatedBy((String) register.get("created_by") );
 			
-			if( register.containsKey("created_date") )
+			if( register.containsKey("create_date") )
 				usr.setCreateDate((Date) register.get("create_date") );
 
 			result.add( usr );

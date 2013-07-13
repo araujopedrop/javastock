@@ -10,8 +10,6 @@ public class Lot {
 	private double initialAmount;
 	private double currentAmount;
 	private List<Movement> movements;
-
-// LO QUE HAGO EN LOTMANAGER.JAVA LO TENGO QUE HACER ACA TMB!! LO DE SETEAR GETEANDO 
 	
 	public Lot(){}
 	
