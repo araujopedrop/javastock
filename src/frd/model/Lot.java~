@@ -12,14 +12,6 @@ public class Lot {
 	private List<Movement> movements;
 	
 	public Lot(){}
-	
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public Date getCreateDate() {
 		return createDate;
