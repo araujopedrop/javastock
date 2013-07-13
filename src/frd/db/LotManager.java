@@ -26,8 +26,7 @@ public class LotManager extends JDBCManager {
 	public static void insertLot(int lot_id,Date created_date, Date due_date) throws SQLException{
 		String insertTableSQL = "INSERT INTO DBLOT"
 			+ "(LOT_ID, LOT_DATE, DUE_DATE) " + "VALUES"
-			+ "("+lot_Id+", '"+created_date+"', '"+due_date+"', " + "to_date('"
-			+ dateFormat.format(creation.getTime()) + "', 'yyyy/mm/dd hh24:mi:ss'))";
+			+ "("+lot_id+", '"+created_date+"', '"+due_date+")";
 		
 		executeUpdate( insertTableSQL );
 	}
@@ -47,8 +46,8 @@ public class LotManager extends JDBCManager {
 	}
 	
 	
-	public static void deleteLot(int userId) throws SQLException{
-		String deleteTableSQL = "DELETE FROM DBLOT WHERE LOT_ID = "+lot_Id;
+	public static void deleteLot(int lot_id) throws SQLException{
+		String deleteTableSQL = "DELETE FROM DBLOT WHERE LOT_ID = "+lot_id;
 		
 		execute( deleteTableSQL );
 	}
@@ -66,13 +65,13 @@ public class LotManager extends JDBCManager {
 				lot.setId( ((BigDecimal) register.get("lot_id")).intValue() );
 			
 			
-			if( register.containsKey("created_b") )
-				usr.setDate((String) register.get("created_by") );
-			
 			if( register.containsKey("created_date") )
-				usr.setCreateDate((Date) register.get("create_date") );
+				lot.setCreateDate((Date) register.get("created_date") );
+			
+			if( register.containsKey("due_date") )
+				lot.setCreateDate((Date) register.get("due_date") );
 
-			result.add( usr );
+			result.add( lot );
 		}
 		
 		return result;
