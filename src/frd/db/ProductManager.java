@@ -11,7 +11,7 @@ import frd.model.Product;
 import frd.model.User;
 
 public class ProductManager extends JDBCManager {
-	public static void createProductDbTable() throws SQLException {
+	public static void createDbProductTable() throws SQLException {
 		String createTableSQL = "CREATE TABLE DBPRODUCT("
 				+ "PRODUCT_ID NUMERIC(5) NOT NULL, "
 				+ "PRODUCTNAME VARCHAR(20) NOT NULL, "
