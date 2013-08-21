@@ -7,10 +7,18 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import frd.app.ui.MainWindow;
+
 public class Main {
 	private static Scanner scanIn = new Scanner(System.in);
 
 	public static void main(String[] args){
+		// Inicio la interfaz de escritorio
+		(new MainWindow()).setVisible(true);
+
+		/*
+		 * Interfaz de usuario por consola
+		 * 
 		System.out.println("*********** Iniciando ***********");
 		System.out.println("q:salir, u:listar usuarios, u-add:agregar usuario, u-del:borrar usuario");
 		//clase "app"
@@ -52,5 +60,6 @@ public class Main {
 		}
 		
         System.out.println("*********** Fin de app ***********");
+        */
 	}
 }
