@@ -1,11 +1,7 @@
 package frd.test;
 
 import java.sql.SQLException;
-import java.util.Date;
-
-
 import frd.model.Product;
-import frd.model.User;
 import frd.db.ProductManager;
 
 //FALTA TERMINAR
@@ -16,37 +12,37 @@ public class TestDBProduct {
 		try{
 			//creo la tabla dbProduct
 			ProductManager.createDbProductTable();
-			System.out.println( "Tabla Users Creada!" );
+			System.out.println( "Tabla Product Creada!" );
 			
-			//cargo dos usuarios
+			//cargo dos productos
 			ProductManager.insertProduct(1, "Producto 1", "descr prod 1");
 			ProductManager.insertProduct(2, "Producto 2", "descr prod 2");
-			System.out.println( "Dos usuarios creados!" );
+			System.out.println( "Dos Productos creados!" );
 
-			//obtengo los usuarios de la bd
-			System.out.println( "Listando usuarios:" );
-			for( Product usr : ProductManager.getProduct() ){
+			//obtengo los productos de la bd
+			System.out.println( "Listando productos:" );
+			for( Product prod : ProductManager.getProduct() ){
 				System.out.println( prod );
 			}
 
-			//modificando usuario
-			ProductManager.updateProduct(2, "Usuario 2 Modificado", "admin", new Date());
-			System.out.println( "Usuario 2 modificado!" );
+			//modificando producto
+			ProductManager.updateProduct(2, "Producto 2 Modificado", "admin");
+			System.out.println( "Producto 2 modificado!" );
 			
-			//obtengo los usuarios de la bd
-			System.out.println( "Listando usuarios:" );
-			for( User usr : ProductManager.getUsers() ){
-				System.out.println( usr );
+			//obtengo los Productos de la bd
+			System.out.println( "Listando productos:" );
+			for( Product prod : ProductManager.getProduct() ){
+				System.out.println( prod );
 			}
 
-			//borrar usuario
-			ProductManager.deleteUser(1);
-			System.out.println( "Usuario 1 eliminado!" );
+			//borrar producto
+			ProductManager.deleteProduct(1);
+			System.out.println( "Producto 1 eliminado!" );
 			
-			//obtengo los usuarios de la bd
-			System.out.println( "Listando usuarios:" );
-			for( User usr : ProductManager.getUsers() ){
-				System.out.println( usr );
+			//obtengo los productos de la bd
+			System.out.println( "Listando productos:" );
+			for( Product prod : ProductManager.getProduct() ){
+				System.out.println( prod );
 			}
 
 		}catch(SQLException ex){

@@ -3,12 +3,10 @@ package frd.db;
 import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
 import frd.model.Product;
-import frd.model.User;
 
 public class ProductManager extends JDBCManager {
 	public static void createDbProductTable() throws SQLException {
