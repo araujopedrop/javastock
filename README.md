@@ -16,7 +16,7 @@ JFrame frame= new JFrame();
 
 //ES OBLIGATORIO, con esto hago q cuando cierre la ventana tmb se pare el proceso
 
-frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);p
 
 frame.show();
 
