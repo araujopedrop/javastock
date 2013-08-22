@@ -49,6 +49,6 @@ public class TestLot {
 		}catch(SQLException ex){
 			System.err.println( "ERROR: " + ex.getLocalizedMessage() );
 		}
-		System.out.println("*********** Fin TEST DBUSER ***********");
+		System.out.println("*********** Fin TEST DBLOT ***********");
 	}
 }

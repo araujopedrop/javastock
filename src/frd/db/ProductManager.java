@@ -14,15 +14,15 @@ public class ProductManager extends JDBCManager { //h
 				+ "PRODUCT_ID NUMERIC(5) NOT NULL, "
 				+ "PRODUCTNAME VARCHAR(20) NOT NULL, "
 				+ "DESCRIPTION VARCHAR(20) NOT NULL, "
-				+ "PRIMARY KEY (PROD_ID) "
+				+ "PRIMARY KEY (PRODUCT_ID) "
 				+ ")";
 
 		execute( createTableSQL );
 	}
 
 	public static void insertProduct(int productId, String productname, String description) throws SQLException{
-		String insertTableSQL = "INSERT INTO DBUSER"
-			+ "(USER_ID, USERNAME, CREATED_BY, CREATED_DATE) " + "VALUES"
+		String insertTableSQL = "INSERT INTO DBPRODUCT"
+			+ "(PRODUCT_ID, PRODUCTNAME, DESCRIPTION) " + "VALUES"
 			+ "("+productId+", '"+productname+"', '"+description+"')";
 		
 		executeUpdate( insertTableSQL );

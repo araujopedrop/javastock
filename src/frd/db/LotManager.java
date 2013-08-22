@@ -14,7 +14,7 @@ public class LotManager extends JDBCManager {
 		String createTableSQL = "CREATE TABLE DBLOT("
 				+ "LOT_ID NUMERIC(5) NOT NULL, "
 				+ "CREATED_DATE DATE NOT NULL, "
-				+ "DUE_DATE DATE NOT NULL. "
+				+ "DUE_DATE DATE NOT NULL "
 				+ ")";
 
 		execute( createTableSQL );
@@ -22,7 +22,7 @@ public class LotManager extends JDBCManager {
 	
 	public static void insertLot(int lot_id,Date created_date, Date due_date) throws SQLException{
 		String insertTableSQL = "INSERT INTO DBLOT"
-			+ "(LOT_ID, LOT_DATE, DUE_DATE) " + "VALUES" +
+			+ "(LOT_ID, CREATED_DATE, DUE_DATE) " + "VALUES" +
 					"(" + lot_id + "," +
 					" '" + created_date + "'," +
 					" '" + due_date + "')";
