@@ -8,7 +8,7 @@ import java.util.List;
 
 import frd.model.Product;
 
-public class ProductManager extends JDBCManager {
+public class ProductManager extends JDBCManager { //h
 	public static void createDbProductTable() throws SQLException {
 		String createTableSQL = "CREATE TABLE DBPRODUCT("
 				+ "PRODUCT_ID NUMERIC(5) NOT NULL, "
